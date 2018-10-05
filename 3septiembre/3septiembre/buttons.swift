@@ -11,7 +11,7 @@ import UIKit
 class buttons: UIButton {
     
     override func awakeFromNib() {
-        layer.borderColor = UIColor.blue.cgColor
+        layer.borderColor = UIColor.magenta.cgColor
         layer.cornerRadius = 10
         layer.borderWidth = 1
         

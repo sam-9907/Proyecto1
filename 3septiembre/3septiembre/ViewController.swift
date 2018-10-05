@@ -12,29 +12,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var tablita: UITableView!
     
-    var mascotas = [compra]()
+    var libros = [compra]()
     var carrito = [compra]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mascotas.append(compra(nombre: "Caballo", precio: 99.9, descripcion: "Tamaño:20 cm, Color: cafe",imagen:"caballo"))
-        mascotas.append(compra(nombre: "Coco", precio: 260.89, descripcion: "Tamaño: 30 cm, Color: blanco",imagen:"coco"))
-        mascotas.append(compra(nombre: "Zorro", precio: 120.5, descripcion: "Tamaño: 20 cm, Color: cafe", imagen: "zorro"))
-        mascotas.append(compra(nombre: "Gato pizza", precio: 59.45, descripcion: "Tamaño: 50 cm, Color: gris", imagen: "gatopizza"))
-        mascotas.append(compra(nombre: "Cocodrilo", precio: 67.89, descripcion: "Tamaño: 15 cm, Color: verde limon", imagen: "cocodrilo"))
+        libros.append(compra(nombre: "La Tregua", precio: 229.00, descripcion: "Autor: Mario Benedetti, Género: Novela-Romántica ",imagen:"Tregua"))
+        libros.append(compra(nombre: "Memoria de mis putas tristes", precio: 158.00, descripcion: "Autor: Gabriel García Márquez, Género: Novela",imagen:"gabo"))
+        libros.append(compra(nombre: "El principito", precio: 295.00, descripcion: "Autor: Antoine de Saint-Exupéry, Género: Cuento", imagen: "principito"))
+        libros.append(compra(nombre: "Orgullo y Prejuicio", precio: 200.00, descripcion: "Autor: Jane Austen, Género: Novela Romantica", imagen: "orgullo"))
+        libros.append(compra(nombre: "La Naranja Mecánica", precio:129.00, descripcion: "Autor: Anthony Burgess, Género: Novela", imagen: "naranja"))
 
     }
   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mascotas.count
+        return libros.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
         
-        cell.textLabel?.text = "\(mascotas[indexPath.row].nombre)"
+        cell.textLabel?.text = "\(libros[indexPath.row].nombre)"
         
         return cell
     }
@@ -43,7 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if segue.identifier == "secondViewController"{
             let indexPath = tablita.indexPathForSelectedRow
             let destination = segue.destination as! SecondViewController
-            destination.fromFirstView = mascotas[(indexPath?.row)!]
+            destination.fromFirstView = libros[(indexPath?.row)!]
         }
 
     }

@@ -20,6 +20,9 @@ class boton: UIButton {
         flash.autoreverses = true
         flash.repeatCount = 3
         layer.add(flash, forKey: nil)
-        
+        layer.borderColor = UIColor.white.cgColor
+        layer.borderWidth = 1.5
+        layer.cornerRadius = 10
+        layer.backgroundColor = UIColor.lightText.cgColor
     }
 }

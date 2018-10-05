@@ -9,6 +9,9 @@
 import UIKit
 class SecondViewController: UIViewController{
     
+  
+    
+    @IBOutlet weak var precio: UILabel!
     @IBOutlet weak var desk: UITextView!
     @IBOutlet weak var etiqueta: UILabel!
     @IBOutlet weak var compra: UIButton!
@@ -20,6 +23,7 @@ class SecondViewController: UIViewController{
         super.viewDidLoad()
         etiqueta.text = fromFirstView.nombre
         desk.text = fromFirstView.descripcion
+        precio.text = String("$\(fromFirstView.precio)")
         image.image = UIImage(named: fromFirstView.imagen)
     }
     
